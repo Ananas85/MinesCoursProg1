@@ -75,10 +75,6 @@ public class NatParInt implements Nat {
 
     @Override
     public boolean equals( Object O ) {
-        if ( O instanceof Integer ) {
-            return ((( Integer ) O).intValue() == this.val());
-        }
-
         if ( !(O instanceof Nat) ) {
             return false;
         }

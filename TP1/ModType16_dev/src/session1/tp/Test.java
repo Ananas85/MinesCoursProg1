@@ -19,7 +19,7 @@ public class Test {
         System.out.println( "" );
 
         System.out.println( "SuccRec" );
-        test( new SuccRec( new Zero() ) );
+        test( new SuccRec( new ZeroRec() ) );
         System.out.println( "" );
     }
 

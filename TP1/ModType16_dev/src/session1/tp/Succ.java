@@ -30,11 +30,13 @@ public class Succ implements Nat {
             throw new IllegalArgumentException(  );
         }
 
-        if ( val == 0 ) {
-            return this.creerZero();
+        Nat nat = this.creerZero();
+        for ( int i = 0; i < val; i++ ) {
+             nat = this.creerSuccesseur( nat );
+            
         }
 
-        return this.creerSuccesseur( this.creerNatAvecValeur( val - 1 ) );
+        return nat;
     }
 
     @Override
@@ -84,6 +86,6 @@ public class Succ implements Nat {
             return false;
         }
 
-        return this.predecesseur().equals( x.predecesseur() );
+        return this.val() == x.val();
     }
 }

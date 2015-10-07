@@ -26,15 +26,19 @@ public class Zero implements Nat {
         if ( val < 0 ) {
             throw new IllegalArgumentException();
         }
-        if ( val == 0 ) {
-            return this.creerZero();
+
+        Nat nat = this.creerZero();
+        for ( int i = 0; i < val; i++ ) {
+            nat = this.creerSuccesseur( nat );
+
         }
-        return this.creerSuccesseur( this.creerNatAvecValeur( val - 1 ) );
+
+        return nat;
     }
 
     @Override
     public Nat creerZero() {
-        return this;
+        return new Zero();
     }
 
     @Override
@@ -69,15 +73,11 @@ public class Zero implements Nat {
 
     @Override
     public boolean equals( Object O ) {
-        if ( O instanceof Integer ) {
-            return ((( Integer ) O).intValue() == this.val());
-        }
-
         if ( !(O instanceof Nat) ) {
             return false;
         }
 
         Nat x = ( Nat ) O;
-        return this.val() == x.val();
+        return x.estNul();
     }
 }
