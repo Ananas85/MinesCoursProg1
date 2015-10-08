@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ModType16_cor/src"/>
+	<classpathentry excluding="tp/" kind="src" path="ModType16_dev/src"/>
+	<classpathentry kind="src" path="ModType16_dev/src/tp"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
