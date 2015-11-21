@@ -1,14 +1,12 @@
 package session3.tp.v1;
 
-import java.util.function.Predicate;
+class Cons<T> implements MultiEnsembleComposite<T> {
 
-class Cons implements MultiEnsembleComposite {
-
-    private int element;
+    private T element;
     private MultiEnsemble reste;
     private int taille;
 
-    public Cons(int i, MultiEnsemble ens) {
+    public Cons( T i, MultiEnsemble ens ) {
         this.element = i;
         this.reste = ens;
         this.taille = 1 + ens.taille();
@@ -35,7 +33,7 @@ class Cons implements MultiEnsembleComposite {
     }
 
     @Override
-    public int element() {
+    public T element() {
         return this.element;
     }
 
@@ -55,27 +53,8 @@ class Cons implements MultiEnsembleComposite {
     }
 
     @Override
-    public MultiEnsemble union( MultiEnsemble ens ) {
-        return null;
-    }
-
-    @Override
-    public int occurences( Object e ) {
-        return 0;
-    }
-
-    @Override
-    public MultiEnsemble filtrer( Predicate pred ) {
-        return null;
-    }
-
-    @Override
-    public String representer() {
-        return null;
-    }
-
-    @Override
-    public boolean estEgal( MultiEnsemble ens ) {
-        return false;
+    public String toString()
+    {
+        return this.representer();
     }
 }

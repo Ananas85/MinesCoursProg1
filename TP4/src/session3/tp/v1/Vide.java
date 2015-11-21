@@ -1,9 +1,12 @@
 package session3.tp.v1;
 
-import java.util.function.Predicate;
+public class Vide<T> implements MultiEnsembleComposite<T> {
 
-public enum Vide implements MultiEnsembleComposite {
-    SINGLETON;
+    public static <T> MultiEnsemble<T> SINGLETON() {
+        return new Vide<T>();
+    }
+
+    private Vide() {}
 
     @Override
     public int taille() {
@@ -26,7 +29,7 @@ public enum Vide implements MultiEnsembleComposite {
     }
 
     @Override
-    public int element() {
+    public T element() {
         throw new UnsupportedOperationException();
     }
 
@@ -46,22 +49,8 @@ public enum Vide implements MultiEnsembleComposite {
     }
 
     @Override
-    public int occurences( Object e ) {
-        return 0;
-    }
-
-    @Override
-    public MultiEnsemble filtrer( Predicate pred ) {
-        return null;
-    }
-
-    @Override
-    public String representer() {
-        return null;
-    }
-
-    @Override
-    public boolean estEgal( MultiEnsemble ens ) {
-        return false;
+    public String toString()
+    {
+        return this.representer();
     }
 }

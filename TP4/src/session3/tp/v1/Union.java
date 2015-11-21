@@ -1,18 +1,16 @@
 package session3.tp.v1;
 
-import java.util.function.Predicate;
-
-class Union implements MultiEnsembleComposite {
+class Union<T> implements MultiEnsembleComposite<T> {
 
     private MultiEnsemble gauche;
     private MultiEnsemble droit;
     private int taille;
 
     // Mémorisation
-    private int element;
-    private MultiEnsemble reste;
+    private T element;
+    private MultiEnsemble<T> reste;
 
-    public Union(MultiEnsemble g, MultiEnsemble d) {
+    public Union( MultiEnsemble g, MultiEnsemble<T> d ) {
         this.gauche = g;
         this.droit = d;
         this.taille = g.taille() + d.taille();
@@ -38,36 +36,36 @@ class Union implements MultiEnsembleComposite {
         return true;
     }
 
-    private void decomposer(){
+    private void decomposer() {
         // Precondition : !this.estVide()
-        MultiEnsemble courant = this; // Invariant : !courant.estVide()
-        while(true){
-            if(courant.estCons()){ // Cons
+        MultiEnsemble<T> courant = this; // Invariant : !courant.estVide()
+        while ( true ) {
+            if ( courant.estCons() ) { // Cons
                 this.reste = courant.reste();
                 this.element = courant.element();
                 return;
             }
 
-            if(courant.gauche().estCons()) {
-                this.reste = courant.gauche().reste().union(courant.droit());
+            if ( courant.gauche().estCons() ) {
+                this.reste = courant.gauche().reste().union( courant.droit() );
                 this.element = courant.gauche().element();
                 return;
             }
 
-            if(courant.gauche().estVide()){
+            if ( courant.gauche().estVide() ) {
                 courant = courant.droit();
-            }else{
-                courant = courant.gauche().gauche().union(courant.gauche().droit().union(courant.droit()));
+            } else {
+                courant = courant.gauche().gauche().union( courant.gauche().droit().union( courant.droit() ) );
             }
         }
     }
 
     @Override
-    public int element() {
-        if(this.estVide()){
+    public T element() {
+        if ( this.estVide() ) {
             throw new UnsupportedOperationException();
         }
-        if(this.reste != null){
+        if ( this.reste != null ) {
             return this.element;
         }
         decomposer();
@@ -76,10 +74,10 @@ class Union implements MultiEnsembleComposite {
 
     @Override
     public MultiEnsemble reste() {
-        if(this.estVide()){
+        if ( this.estVide() ) {
             throw new UnsupportedOperationException();
         }
-        if(this.reste != null){
+        if ( this.reste != null ) {
             return this.reste;
         }
         decomposer();
@@ -97,22 +95,8 @@ class Union implements MultiEnsembleComposite {
     }
 
     @Override
-    public int occurences( Object e ) {
-        return 0;
-    }
-
-    @Override
-    public MultiEnsemble filtrer( Predicate pred ) {
-        return null;
-    }
-
-    @Override
-    public String representer() {
-        return null;
-    }
-
-    @Override
-    public boolean estEgal( MultiEnsemble ens ) {
-        return false;
+    public String toString()
+    {
+        return this.representer();
     }
 }
