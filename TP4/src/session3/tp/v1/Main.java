@@ -17,12 +17,12 @@ public class Main {
         System.out.println( "{4, 3, 2, 1, 1} ? " + a );
         System.out.println( "{4, 3} ? " + a.gauche() );
         System.out.println( "{2, 1, 1} ? " + a.droit() );
-        System.out.println( "0 ? " + a.occurrences( 5 ));
+        System.out.println( "0 ? " + a.occurrences( 5 ) );
         System.out.println( "2 ? " + a.occurrences( 1 ) );
         System.out.println( "true ? " + a.equals( a ) );
         System.out.println( "false ? " + a.equals( a.cons( 5 ) ) );
-        System.out.println( "{4, 3, 2, 1} ? " + a.supprimerDoublonsIterative());
-        System.out.println( "{4, 3, 2, 1} ? " + a.supprimerDoublonsRecursive());
+        System.out.println( "{4, 3, 2, 1} ? " + a.supprimerDoublonsIterative() );
+        System.out.println( "{4, 3, 2, 1} ? " + a.supprimerDoublonsRecursive() );
 
         MultiEnsemble<Integer> b = vide;
         BigInteger max = BigInteger.valueOf( 100000 );
@@ -35,6 +35,6 @@ public class Main {
             s = s.add( BigInteger.valueOf( b.element() ) );
             b = b.reste();
         }
-        System.out.println(((max.multiply(max.subtract(BigInteger.ONE).divide(BigInteger.valueOf(2))))) + " ? " + s);
+        System.out.println( max.multiply( max.subtract( BigInteger.ONE ) ).divide( BigInteger.valueOf( 2 ) ) + " ? " + s );
     }
 }

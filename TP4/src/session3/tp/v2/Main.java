@@ -35,6 +35,7 @@ public class Main {
         {
             s = s.add( BigInteger.valueOf( element ) );
         }
-        System.out.println(((max.multiply(max.subtract(BigInteger.ONE).divide(BigInteger.valueOf(2))))) + " ? " + s);
+
+        System.out.println( max.multiply( max.subtract( BigInteger.ONE ) ).divide( BigInteger.valueOf( 2 ) ) + " ? " + s );
     }
 }
