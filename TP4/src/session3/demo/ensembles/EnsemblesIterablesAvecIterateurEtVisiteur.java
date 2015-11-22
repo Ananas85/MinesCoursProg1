@@ -65,7 +65,6 @@ class CalculCardinal implements Visiteur4<Integer> {
 		int r = ens.reste().accueillir(this).resultat();
 		return new CalculCardinal(r + 1);
 	}
-	
 }
 
 class Representation implements Visiteur4<String>{
