@@ -21,6 +21,8 @@ public class Main {
         System.out.println( "2 ? " + a.occurrences( 1 ) );
         System.out.println( "true ? " + a.equals( a ) );
         System.out.println( "false ? " + a.equals( a.cons( 5 ) ) );
+        System.out.println( "{4, 3, 2, 1} ? " + a.supprimerDoublonsIterative());
+        System.out.println( "{4, 3, 2, 1} ? " + a.supprimerDoublonsRecursive());
 
         MultiEnsemble<Integer> b = vide;
         BigInteger max = BigInteger.valueOf( 100000 );

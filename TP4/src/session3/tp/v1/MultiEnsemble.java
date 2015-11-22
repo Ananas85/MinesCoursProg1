@@ -44,6 +44,9 @@ interface MultiEnsemble<E> {
 
     boolean estEgal( MultiEnsemble<?> ens );
 
+    MultiEnsemble<E> supprimerDoublonsIterative();
+
+    MultiEnsemble<E> supprimerDoublonsRecursive();
 }
 
 
