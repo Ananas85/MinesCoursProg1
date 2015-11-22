@@ -1,4 +1,4 @@
-package session3.tp.v1;
+package session3.tp.v2;
 
 import java.math.BigInteger;
 
@@ -31,9 +31,9 @@ public class Main {
         }
         System.out.println( max + " ? " + b.taille() );
         BigInteger s = BigInteger.ZERO;
-        while ( !b.estVide() ) {
-            s = s.add( BigInteger.valueOf( b.element() ) );
-            b = b.reste();
+        for ( Integer element : b )
+        {
+            s = s.add( BigInteger.valueOf( element ) );
         }
         System.out.println(((max.multiply(max.subtract(BigInteger.ONE).divide(BigInteger.valueOf(2))))) + " ? " + s);
     }

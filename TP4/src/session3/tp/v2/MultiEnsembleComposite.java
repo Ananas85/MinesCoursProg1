@@ -1,46 +1,48 @@
-package session3.tp.v1;
+package session3.tp.v2;
 
+import java.util.Iterator;
 import java.util.function.Predicate;
 
 public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
 
     @Override
-    default public MultiEnsemble cons( T n ) {
+    default public MultiEnsemble<T> cons( T n ) {
         return new Cons( n, this );
     }
 
     @Override
-    default public MultiEnsemble union( MultiEnsemble ens ) {
+    default public MultiEnsemble<T> union( MultiEnsemble ens ) {
         return new Union( this, ens );
     }
 
     @Override
     default public String representer() {
         String result = "{";
-        MultiEnsemble rest = this;
-        boolean resteEstVide = rest.estVide();
-        while ( !resteEstVide ) {
-            result = result.concat( String.valueOf( rest.element() ) );
-            rest = rest.reste();
-            resteEstVide = rest.estVide();
-            if ( !resteEstVide ) {
+        int i = 0;
+        for ( T currentElement : this )
+        {
+            result = result.concat( String.valueOf( currentElement ) );
+            if ( i != this.taille() -1 )
+            {
                 result = result.concat( ", " );
             }
+            i++;
         }
+
         return result.concat( "}" );
     }
 
     @Override
     default public MultiEnsemble<T> filtrer( Predicate<T> pred ) {
         MultiEnsemble<T> res = Vide.SINGLETON();
-        MultiEnsemble<T> current = this;
-        while ( !current.estVide() ) {
-            T currentElement = current.element();
+
+        for ( T currentElement : this )
+        {
             if ( pred.test( currentElement ) ) {
                 res = res.cons( currentElement );
             }
-            current = current.reste();
         }
+
         return res;
     }
 
@@ -55,31 +57,33 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
         if ( this.taille() != ens.taille() ) {
             return false;
         }
-        MultiEnsemble<T> current = this;
-        while ( !current.estVide() ) {
-            T currentElement = current.element();
+
+        for ( T currentElement : this ) {
             if ( this.occurrences( currentElement ) != ens.occurrences( currentElement ) ) {
                 return false;
             }
-            current = current.reste();
         }
+
         return true;
     }
 
     @Override
     default public MultiEnsemble<T> supprimerDoublonsIterative()
     {
-        MultiEnsemble<T> res = Vide.SINGLETON();
-        MultiEnsemble<T> vide = Vide.SINGLETON();
+        MultiEnsemble<T> tmp = Vide.SINGLETON();
 
-        MultiEnsemble<T> current = this;
-        while ( !current.estVide() ) {
-            T currentElement = current.element();
-            if (res.occurrences( currentElement ) < 1 )
+        for ( T currentElement : this )
+        {
+            if ( tmp.occurrences( currentElement ) < 1 )
             {
-                res = res.union( vide.cons( currentElement ) );
+                tmp = tmp.cons( currentElement );
             }
-            current = current.reste();
+        }
+
+        MultiEnsemble<T> res = Vide.SINGLETON();
+        for ( T currentElement : tmp )
+        {
+            res = res.cons( currentElement );
         }
 
         return res;
@@ -100,5 +104,11 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
         }
 
         return tmp;
+    }
+
+    @Override
+    default public Iterator<T> iterator()
+    {
+        return new Iterateur<T>( this );
     }
 }
