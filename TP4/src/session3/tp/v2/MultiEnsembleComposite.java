@@ -19,11 +19,9 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
     default public String representer() {
         String result = "{";
         int i = 0;
-        for ( T currentElement : this )
-        {
+        for ( T currentElement : this ) {
             result = result.concat( String.valueOf( currentElement ) );
-            if ( i != this.taille() -1 )
-            {
+            if ( i != this.taille() - 1 ) {
                 result = result.concat( ", " );
             }
             i++;
@@ -36,8 +34,7 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
     default public MultiEnsemble<T> filtrer( Predicate<T> pred ) {
         MultiEnsemble<T> res = Vide.SINGLETON();
 
-        for ( T currentElement : this )
-        {
+        for ( T currentElement : this ) {
             if ( pred.test( currentElement ) ) {
                 res = res.cons( currentElement );
             }
@@ -68,21 +65,17 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
     }
 
     @Override
-    default public MultiEnsemble<T> supprimerDoublonsIterative()
-    {
+    default public MultiEnsemble<T> supprimerDoublonsIterative() {
         MultiEnsemble<T> tmp = Vide.SINGLETON();
 
-        for ( T currentElement : this )
-        {
-            if ( tmp.occurrences( currentElement ) < 1 )
-            {
+        for ( T currentElement : this ) {
+            if ( tmp.occurrences( currentElement ) < 1 ) {
                 tmp = tmp.cons( currentElement );
             }
         }
 
         MultiEnsemble<T> res = Vide.SINGLETON();
-        for ( T currentElement : tmp )
-        {
+        for ( T currentElement : tmp ) {
             res = res.cons( currentElement );
         }
 
@@ -90,16 +83,13 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
     }
 
     @Override
-    default public MultiEnsemble<T> supprimerDoublonsRecursive()
-    {
-        if ( this.estVide() )
-        {
+    default public MultiEnsemble<T> supprimerDoublonsRecursive() {
+        if ( this.estVide() ) {
             return Vide.SINGLETON();
         }
 
         MultiEnsemble<T> tmp = this.reste().supprimerDoublonsRecursive();
-        if ( tmp.occurrences( this.element() ) < 1 )
-        {
+        if ( tmp.occurrences( this.element() ) < 1 ) {
             tmp = tmp.cons( this.element() );
         }
 
@@ -107,8 +97,7 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
     }
 
     @Override
-    default public Iterator<T> iterator()
-    {
+    default public Iterator<T> iterator() {
         return new Iterateur<T>( this );
     }
 }

@@ -6,7 +6,8 @@ public class Vide<T> implements MultiEnsembleComposite<T> {
         return new Vide<T>();
     }
 
-    private Vide() {}
+    private Vide() {
+    }
 
     @Override
     public int taille() {
@@ -49,8 +50,7 @@ public class Vide<T> implements MultiEnsembleComposite<T> {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return this.representer();
     }
 }

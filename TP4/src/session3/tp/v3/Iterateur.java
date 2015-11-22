@@ -44,8 +44,8 @@ class Iterateur<T> implements Iterator<T> {
         }
     }
 
-    public MultiEnsemble<T> reste(){
-        if (reste == null)
+    public MultiEnsemble<T> reste() {
+        if ( reste == null )
             throw new UnsupportedOperationException();
         return this.reste;
     }
@@ -57,10 +57,10 @@ class Iterateur<T> implements Iterator<T> {
 
     @Override
     public T next() {
-        if (reste == null)
+        if ( reste == null )
             throw new UnsupportedOperationException();
         T r = this.element;
-        decomposer(reste);
+        decomposer( reste );
         return r;
     }
 }

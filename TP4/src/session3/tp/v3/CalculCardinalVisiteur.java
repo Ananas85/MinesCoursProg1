@@ -4,7 +4,7 @@ class CalculCardinalVisiteur implements Visiteur<Integer> {
 
     private int card;
 
-    public CalculCardinalVisiteur(int card) {
+    public CalculCardinalVisiteur( int card ) {
         this.card = card;
     }
 
@@ -19,8 +19,8 @@ class CalculCardinalVisiteur implements Visiteur<Integer> {
     }
 
     @Override
-    public Visiteur<Integer> visiterCons(MultiEnsemble ens) {
-        int r = (int)ens.reste().accept(this).resultat();
-        return new CalculCardinalVisiteur(r + 1);
+    public Visiteur<Integer> visiterCons( MultiEnsemble ens ) {
+        int r = ( int ) ens.reste().accept( this ).resultat();
+        return new CalculCardinalVisiteur( r + 1 );
     }
 }

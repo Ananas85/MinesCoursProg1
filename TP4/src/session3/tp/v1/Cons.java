@@ -53,8 +53,7 @@ class Cons<T> implements MultiEnsembleComposite<T> {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return this.representer();
     }
 }
