@@ -1,6 +1,6 @@
 package session3.demo.patrons.decorateur;
 
-import session3.demo.patrons.agregationDelegation.Agent;
+import ModType16_dev.session3.demo.patrons.agregationDelegation.Agent;
 
 public class AgentDecoupantMessages implements Agent {
 	// Agent décoré

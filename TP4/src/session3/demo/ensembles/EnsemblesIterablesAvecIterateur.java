@@ -1,6 +1,5 @@
 package session3.demo.ensembles;
 
-
 import java.util.Iterator;
 
 /*
@@ -28,7 +27,7 @@ interface Ensemble3 extends Iterable<Integer>{
 	default Ensemble3 vide(){
 		return Vide3.SINGLETON; // Exemple d'une méthode par défaut
 	}
-	Ensemble3 cons( int n );
+	Ensemble3 cons( int n, Ensemble3 ens );
 	Ensemble3 union( Ensemble3 ens );
 }
 
@@ -139,8 +138,8 @@ enum Vide3 implements Ensemble3 {
 	}
 
 	@Override
-	public Ensemble3 cons(int n) {
-		return new Cons3(n, this);
+	public Ensemble3 cons(int n, Ensemble3 ens) {
+		return new Cons3(n, ens);
 	}
 	@Override
 	public Ensemble3 union(Ensemble3 ens) {
@@ -202,8 +201,8 @@ class Cons3 implements Ensemble3 {
 	}
 
 	@Override
-	public Ensemble3 cons(int n) {
-		return new Cons3(n, this);
+	public Ensemble3 cons(int n, Ensemble3 ens) {
+		return new Cons3(n, ens);
 	}
 
 	
@@ -268,8 +267,8 @@ class Union3 implements Ensemble3 {
 	}
 
 	@Override
-	public Ensemble3 cons(int n) {
-		return new Cons3(n, this);
+	public Ensemble3 cons(int n, Ensemble3 ens) {
+		return new Cons3(n, ens);
 	}
 	
 	@Override

@@ -1,6 +1,6 @@
 package session3.demo.patrons.heritageDescendant;
 
-import session3.demo.patrons.agregationDelegation.AgentCommuniquant;
+import ModType16_dev.session3.demo.patrons.agregationDelegation.AgentCommuniquant;
 
 public abstract class AgentDecoupantMessages implements AgentCommuniquant {
 	@Override

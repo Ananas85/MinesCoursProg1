@@ -100,4 +100,9 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
     default public Iterator<T> iterator() {
         return new Iterateur<T>( this );
     }
+
+    @Override
+    default public T element() {
+        throw new UnsupportedOperationException();
+    }
 }

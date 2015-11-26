@@ -96,4 +96,9 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
 
         return tmp;
     }
+
+    @Override
+    default public T element() {
+        throw new UnsupportedOperationException();
+    }
 }

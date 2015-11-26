@@ -9,15 +9,9 @@ public class Test {
 		Liste<String> l2 = fab.creerCons("l2", l1);
 		System.out.println("2 ? " + l2.taille());
 		System.out.println("2 ? " + taille(l2));
-		System.out.println("2 ? " + taille2(l2));
 	}
 	// Fonction récursive
 	private static <E> int taille(Liste<E> l){
-		if(l.estVide())
-			return 0;
-		return 1 + taille(l.reste());
-	}
-	private static int taille2(Liste<?> l){
 		if(l.estVide())
 			return 0;
 		return 1 + taille(l.reste());

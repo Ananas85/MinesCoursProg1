@@ -1,10 +1,10 @@
 package session3.tp.v3;
 
-interface Visiteur<T> {
+interface Visiteur<T, E> {
     T resultat();
 
-    Visiteur<T> visiterVide();
+    Visiteur<T, E> visiterVide();
 
-    Visiteur<T> visiterCons( MultiEnsemble ens );
+    Visiteur<T, E> visiterCons( MultiEnsemble<E> ens );
 }
 

@@ -102,10 +102,15 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
     }
 
     @Override
-    default Visiteur<T> accept( Visiteur<T> v ) {
+    default Visiteur accept( Visiteur v ) {
         if ( this.estVide() ) {
             return v.visiterVide();
         }
         return v.visiterCons( this );
+    }
+
+    @Override
+    default public T element() {
+        throw new UnsupportedOperationException();
     }
 }

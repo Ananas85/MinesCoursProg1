@@ -1,6 +1,5 @@
 package session3.demo.ensembles;
 
-
 /*
  * Ensemble ::= Vide | Cons(Element, Ensemble) | Union(Ensemble, Ensemble)
  */
@@ -19,7 +18,7 @@ interface Ensemble2 {
 	default Ensemble2 vide(){
 		return Vide2.SINGLETON; // Exemple d'une méthode par défaut
 	}
-	Ensemble2 cons( int n );
+	Ensemble2 cons( int n, Ensemble2 ens );
 	Ensemble2 union( Ensemble2 ens );
 }
 
@@ -67,8 +66,8 @@ enum Vide2 implements Ensemble2 {
 	}
 
 	@Override
-	public Ensemble2 cons(int n) {
-		return new Cons2(n, this);
+	public Ensemble2 cons(int n, Ensemble2 ens) {
+		return new Cons2(n, ens);
 	}
 	@Override
 	public Ensemble2 union(Ensemble2 ens) {
@@ -131,8 +130,8 @@ class Cons2 implements Ensemble2 {
 	}
 
 	@Override
-	public Ensemble2 cons(int n) {
-		return new Cons2(n, this);
+	public Ensemble2 cons(int n, Ensemble2 ens) {
+		return new Cons2(n, ens);
 	}
 
 	
@@ -235,8 +234,8 @@ class Union2 implements Ensemble2 {
 	}
 
 	@Override
-	public Ensemble2 cons(int n) {
-		return new Cons2(n, this);
+	public Ensemble2 cons(int n, Ensemble2 ens) {
+		return new Cons2(n, ens);
 	}
 	
 	@Override
@@ -252,7 +251,7 @@ public class EnsemblesIterables {
 	public static void main(String[] args) {
 		Ensemble2 a = new Cons2(1, Vide2.SINGLETON);
 		Ensemble2 b = Vide2.SINGLETON;
-		for(int i = 0; i < 10000; i++){
+		for(int i = 0; i < 10000000; i++){
 			b = b.union(a);
 		}
 		int s = 0;

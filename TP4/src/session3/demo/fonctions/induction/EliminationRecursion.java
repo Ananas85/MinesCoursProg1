@@ -14,6 +14,7 @@ interface Continuation {
 	IntUnaryOperator tete();
 	Continuation reste();
 }
+
 class Vide implements Continuation {
 	@Override
 	public boolean estVide() {

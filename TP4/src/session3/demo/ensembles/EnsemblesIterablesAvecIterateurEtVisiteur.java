@@ -1,6 +1,5 @@
 package session3.demo.ensembles;
 
-
 /*
  * Ensemble ::= Vide | Cons(Element, Ensemble) | Union(Ensemble, Ensemble)
  */
@@ -22,23 +21,24 @@ interface Ensemble4 {
 	default Ensemble4 vide(){
 		return Vide4.SINGLETON; // Exemple d'une méthode par défaut
 	}
-	Ensemble4 cons( int n );
+	Ensemble4 cons( int n, Ensemble4 ens );
 	Ensemble4 union( Ensemble4 ens );
 	// Visiteur
 	default <T> Visiteur4<T> accueillir( Visiteur4<T> v ){
 		if(this.estVide()){
-			return v.visiterVide();
+			return v.visiterVide(this);
 		}
 		return v.visiterCons(this);
 	}
 }
+
 /*
  * Visiteur générique (le paramètre T désigne le type de ce qui est calculé)
  * Le visiteur visite le composite comme un itérateur.
  */
 interface Visiteur4<T>{
 	T resultat();
-	Visiteur4<T> visiterVide();
+	Visiteur4<T> visiterVide( Ensemble4 ens );
 	Visiteur4<T> visiterCons( Ensemble4 ens );
 }
 
@@ -56,7 +56,7 @@ class CalculCardinal implements Visiteur4<Integer> {
 	}
 
 	@Override
-	public Visiteur4<Integer> visiterVide() {
+	public Visiteur4<Integer> visiterVide(Ensemble4 ens) {
 		return this;
 	}
 
@@ -65,6 +65,7 @@ class CalculCardinal implements Visiteur4<Integer> {
 		int r = ens.reste().accueillir(this).resultat();
 		return new CalculCardinal(r + 1);
 	}
+	
 }
 
 class Representation implements Visiteur4<String>{
@@ -81,7 +82,7 @@ class Representation implements Visiteur4<String>{
 	}
 
 	@Override
-	public Visiteur4<String> visiterVide() {
+	public Visiteur4<String> visiterVide(Ensemble4 ens) {
 		return this;
 	}
 
@@ -168,11 +169,13 @@ enum Vide4 implements Ensemble4 {
 
 	@Override
 	public boolean estCons() {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean estUnion() {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -197,8 +200,8 @@ enum Vide4 implements Ensemble4 {
 	}
 
 	@Override
-	public Ensemble4 cons(int n) {
-		return new Cons4(n, this);
+	public Ensemble4 cons(int n, Ensemble4 ens) {
+		return new Cons4(n, ens);
 	}
 	@Override
 	public Ensemble4 union(Ensemble4 ens) {
@@ -261,8 +264,8 @@ class Cons4 implements Ensemble4 {
 	}
 
 	@Override
-	public Ensemble4 cons(int n) {
-		return new Cons4(n, this);
+	public Ensemble4 cons(int n, Ensemble4 ens) {
+		return new Cons4(n, ens);
 	}
 
 	
@@ -327,8 +330,8 @@ class Union4 implements Ensemble4 {
 	}
 
 	@Override
-	public Ensemble4 cons(int n) {
-		return new Cons4(n, this);
+	public Ensemble4 cons(int n, Ensemble4 ens) {
+		return new Cons4(n, ens);
 	}
 	
 	@Override

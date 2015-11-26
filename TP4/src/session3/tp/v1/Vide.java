@@ -1,12 +1,12 @@
 package session3.tp.v1;
 
-public class Vide<T> implements MultiEnsembleComposite<T> {
+public enum Vide implements MultiEnsembleComposite {
 
-    public static <T> MultiEnsemble<T> SINGLETON() {
-        return new Vide<T>();
-    }
+    SINGLETON;
 
-    private Vide() {
+    public static MultiEnsemble SINGLETON()
+    {
+        return SINGLETON;
     }
 
     @Override
@@ -27,11 +27,6 @@ public class Vide<T> implements MultiEnsembleComposite<T> {
     @Override
     public boolean estUnion() {
         return false;
-    }
-
-    @Override
-    public T element() {
-        throw new UnsupportedOperationException();
     }
 
     @Override

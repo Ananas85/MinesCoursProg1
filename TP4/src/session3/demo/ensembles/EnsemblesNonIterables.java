@@ -1,6 +1,5 @@
 package session3.demo.ensembles;
 
-
 /*
  * Ensemble ::= Vide | Cons(Element, Ensemble) | Union(Ensemble, Ensemble)
  */
@@ -106,6 +105,7 @@ class Union1 implements Ensemble1 {
 	}
 	
 }
+
 public class EnsemblesNonIterables {
 
 	public static void main(String[] args) {

@@ -51,7 +51,7 @@ interface MultiEnsemble<E> extends Iterable<E> {
 
     Iterator<E> iterator();
 
-    Visiteur<E> accept( Visiteur<E> v );
+    Visiteur accept( Visiteur v );
 }
 
 

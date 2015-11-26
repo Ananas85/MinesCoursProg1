@@ -1,6 +1,6 @@
 package session3.tp.v3;
 
-public class RepresenterVisiteur implements Visiteur<String> {
+public class RepresenterVisiteur<E> implements Visiteur<String, E> {
 
     String resultat;
 
@@ -14,18 +14,17 @@ public class RepresenterVisiteur implements Visiteur<String> {
     }
 
     @Override
-    public Visiteur<String> visiterVide() {
+    public Visiteur<String, E> visiterVide() {
         return this;
     }
 
     @Override
-    public Visiteur<String> visiterCons( MultiEnsemble ens ) {
-        MultiEnsemble reste = ens.reste();
-        Object tete = ens.element();
+    public Visiteur<String, E> visiterCons( MultiEnsemble<E> ens ) {
+        E element = ens.element();
+        MultiEnsemble<E> reste = ens.reste();
         if ( reste.estVide() ) {
-            return new RepresenterVisiteur( String.valueOf( tete ) );
+            return new RepresenterVisiteur<>( String.valueOf( element ) );
         }
-        String r = ( String ) reste.accept( this ).resultat();
-        return new RepresenterVisiteur( tete + ", " + r );
+        return new RepresenterVisiteur<>( element + ", " + reste.accept( this ).resultat() );
     }
 }

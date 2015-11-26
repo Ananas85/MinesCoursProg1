@@ -1,10 +1,6 @@
 package session3.demo.patrons.observateur;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ServeurObservations<S extends Observable<S, E , C>, E, C extends Observateur<C, E, S>> 
 	implements Observable<S, E, C>{

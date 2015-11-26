@@ -1,7 +1,7 @@
 package session3.demo.patrons.heritageDescendant;
 
-import session3.demo.patrons.agregationDelegation.Agent;
-import session3.demo.patrons.agregationDelegation.AgentCommuniquant;
+import ModType16_dev.session3.demo.patrons.agregationDelegation.Agent;
+import ModType16_dev.session3.demo.patrons.agregationDelegation.AgentCommuniquant;
 
 public class Test {
 	public static void main(String[] args) {

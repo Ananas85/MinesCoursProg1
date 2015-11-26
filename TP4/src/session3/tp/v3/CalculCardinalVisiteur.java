@@ -1,6 +1,6 @@
 package session3.tp.v3;
 
-class CalculCardinalVisiteur implements Visiteur<Integer> {
+class CalculCardinalVisiteur<E> implements Visiteur<Integer, E> {
 
     private int card;
 
@@ -14,13 +14,13 @@ class CalculCardinalVisiteur implements Visiteur<Integer> {
     }
 
     @Override
-    public Visiteur<Integer> visiterVide() {
+    public Visiteur<Integer, E> visiterVide() {
         return this;
     }
 
     @Override
-    public Visiteur<Integer> visiterCons( MultiEnsemble ens ) {
-        int r = ( int ) ens.reste().accept( this ).resultat();
+    public Visiteur<Integer, E> visiterCons( MultiEnsemble<E> ens ) {
+        int r = (int)ens.reste().accept( this ).resultat();
         return new CalculCardinalVisiteur( r + 1 );
     }
 }
