@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <interface id="1" language="java" name="ModType16_dev.session3.demo.patrons.agregationDelegation.Agent" project="ModTyp16_cor"
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/agregationDelegation/Agent.java" binary="false"
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="64" y="95"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="2" language="java" name="ModType16_dev.session3.demo.patrons.agregationDelegation.AgentCommuniquant"
+    project="ModTyp16_cor" 
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/agregationDelegation/AgentCommuniquant.java" binary="false"
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="235" y="96"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="3" language="java" name="ModType16_dev.session3.demo.patrons.agregationDelegation.Canal" project="ModTyp16_cor"
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/agregationDelegation/Canal.java" binary="false"
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="62" y="246"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="4" language="java" name="ModType16_dev.session3.demo.patrons.heritageMultiple.AgentDecoupantMessages"
+    project="ModTyp16_cor" 
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/heritageMultiple/AgentDecoupantMessages.java" binary="false"
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="369" y="-11"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="5" language="java" name="ModType16_dev.session3.demo.patrons.heritageMultiple.AgentEncapsulantMessages"
+    project="ModTyp16_cor" 
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/heritageMultiple/AgentEncapsulantMessages.java" binary="false"
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="382" y="200"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" language="java" name="ModType16_dev.session3.demo.patrons.agregationDelegation.CanalOutProtocole1"
+    project="ModTyp16_cor" 
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/agregationDelegation/CanalOutProtocole1.java" binary="false"
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="680" y="272"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="ModType16_dev.session3.demo.patrons.agregationDelegation.CanalOutProtocole2"
+    project="ModTyp16_cor" 
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/agregationDelegation/CanalOutProtocole2.java" binary="false"
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="979" y="273"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="ModType16_dev.session3.demo.patrons.heritageMultiple.AgentDecoupantMessagesPourProtocole1"
+    project="ModTyp16_cor" 
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/heritageMultiple/AgentDecoupantMessagesPourProtocole1.java"
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="268" x="553" y="7"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="ModType16_dev.session3.demo.patrons.heritageMultiple.AgentDecoupantMessagesPourProtocole2"
+    project="ModTyp16_cor" 
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/heritageMultiple/AgentDecoupantMessagesPourProtocole2.java"
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="982" y="38"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="ModType16_dev.session3.demo.patrons.heritageMultiple.AgentEncapsulantMessagesPourProtocole1"
+    project="ModTyp16_cor" 
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/heritageMultiple/AgentEncapsulantMessagesPourProtocole1.java"
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="678" y="152"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="ModType16_dev.session3.demo.patrons.heritageMultiple.AgentEncapsulantMessagesPourProtocole2"
+    project="ModTyp16_cor" 
+    file="/ModTyp16_cor/src/ModType16_dev.session3/demo/patrons/heritageMultiple/AgentEncapsulantMessagesPourProtocole2.java"
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="986" y="153"/>    
+    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="12">    
+    <bendpoint x="975" y="332"/>    
+    <bendpoint x="63" y="333"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
+  <generalization id="13">    
+    <bendpoint x="832" y="143"/>    
+    <bendpoint x="833" y="269"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="14">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="15">    
+    <bendpoint x="1146" y="30"/>    
+    <bendpoint x="1146" y="271"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <realization id="16">    
+    <bendpoint x="687" y="-10"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <realization id="17">    
+    <bendpoint x="986" y="205"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <generalization id="18">    
+    <bendpoint x="832" y="34"/>    
+    <bendpoint x="832" y="270"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="19">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <realization id="20">    
+    <bendpoint x="678" y="333"/>    
+    <bendpoint x="62" y="335"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
+  <realization id="21">    
+    <bendpoint x="972" y="-9"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <realization id="23">    
+    <bendpoint x="679" y="203"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <generalization id="24">    
+    <bendpoint x="1147" y="148"/>    
+    <bendpoint x="1144" y="271"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="25">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
