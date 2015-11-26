@@ -18,21 +18,6 @@ class Cons<T> implements MultiEnsembleComposite<T> {
     }
 
     @Override
-    public boolean estVide() {
-        return false;
-    }
-
-    @Override
-    public boolean estCons() {
-        return true;
-    }
-
-    @Override
-    public boolean estUnion() {
-        return false;
-    }
-
-    @Override
     public T element() {
         return this.element;
     }

@@ -21,21 +21,6 @@ class Union<T> implements MultiEnsembleComposite<T> {
         return this.taille;
     }
 
-    @Override
-    public boolean estVide() {
-        return (this.taille() == 0);
-    }
-
-    @Override
-    public boolean estCons() {
-        return false;
-    }
-
-    @Override
-    public boolean estUnion() {
-        return true;
-    }
-
     //La methode sert a remplir element et reste
     private void decomposer() {
         // Precondition : !this.estVide()

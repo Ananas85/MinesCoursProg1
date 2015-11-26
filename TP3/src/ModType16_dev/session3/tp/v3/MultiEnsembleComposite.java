@@ -16,6 +16,24 @@ public interface MultiEnsembleComposite<T> extends MultiEnsemble<T> {
     }
 
     @Override
+    default public boolean estVide()
+    {
+        return (this.taille() == 0);
+    }
+
+    @Override
+    default public boolean estCons()
+    {
+        return (this instanceof Cons);
+    }
+
+    @Override
+    default public boolean estUnion()
+    {
+        return (this instanceof Union);
+    }
+
+    @Override
     default public String representer() {
         String result = "{";
         int i = 0;

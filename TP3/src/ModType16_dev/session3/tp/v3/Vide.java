@@ -15,21 +15,6 @@ public enum Vide implements MultiEnsembleComposite {
     }
 
     @Override
-    public boolean estVide() {
-        return true;
-    }
-
-    @Override
-    public boolean estCons() {
-        return false;
-    }
-
-    @Override
-    public boolean estUnion() {
-        return false;
-    }
-
-    @Override
     public MultiEnsemble reste() {
         throw new UnsupportedOperationException();
     }
