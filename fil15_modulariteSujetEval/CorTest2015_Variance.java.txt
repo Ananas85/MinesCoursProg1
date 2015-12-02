@@ -1,0 +1,114 @@
+import java.util.LinkedList;
+import java.util.List;
+
+class A {
+}
+
+class B extends A {
+    public void f() {
+    }
+}
+
+public class Exo1 {
+
+    @SuppressWarnings("unchecked")
+    private static List<A> covariance(List<B> l) {
+	return (List<A>) (List<?>) l;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static List<B> contravariance(List<A> l) {
+	return (List<B>) (List<?>) l;
+    }
+
+    /*
+     * Question 4.2 : covariance générique
+     */
+    @SuppressWarnings("unchecked")
+    private static <T> // 1 / forall
+	List<T> covarianceG(List<? extends T> l) // 1 / exists
+    {
+	return (List<T>) (List<?>) l;
+    }
+
+    /*
+     * Question 4.2 : contravariance générique
+     */
+    @SuppressWarnings("unchecked")
+    private static <T> // 1 / forall
+	List<T> contravarianceG(List<? super T> l) // 1/ exists
+    {
+	return (List<T>) (List<?>) l;
+    }
+
+    public static void main(String[] args) {
+	erreurCovariance();
+	erreurContravariance();
+	erreurCovarianceG();
+	erreurContravarianceG();
+    }
+
+    /*
+     * Question 4.1 : erreur par covariance
+     */
+
+    private static void erreurCovariance() {
+	try {
+	    List<B> lB = new LinkedList<>();
+	    List<A> lA = covariance(lB); // 1 / conversion
+	    lA.add(new A()); // 1 / modif de List<A>
+	    lB.get(0).f(); // 1 / erreur en lecture de List<B>
+	} catch (Exception e) {
+	    e.printStackTrace(System.out);
+	}
+    }
+
+    /*
+     * Question 4.1 : erreur par contravariance
+     */
+    private static void erreurContravariance() {
+	try {
+	    List<A> lA = new LinkedList<>();
+	    lA.add(new A()); // 1 / modif de List<A>
+	    List<B> lB = contravariance(lA); // 1 / conversion
+	    lB.get(0).f(); // 1 / erreur en lecture de List<B>
+	} catch (Exception e) {
+	    e.printStackTrace(System.out);
+	}
+    }
+
+    /*
+     * Question 4.2 : erreur par covariance 
+     * utilisant la conversion générique 
+     */
+    private static void erreurCovarianceG() {
+	try {
+	    // 0 pour le schéma identique au précédent
+	    List<B> lB = new LinkedList<>();
+	    List<A> lA = Exo1.<A> covarianceG(lB); // 1 pour l'intanciation
+	    lA.add(new A());
+	    lB.get(0).f();
+	} catch (Exception e) {
+	    e.printStackTrace(System.out);
+	}
+    }
+
+    /*
+     * Question 4.2 : erreur par contrariance 
+     * utilisant la conversion générique 
+     */
+    private static void erreurContravarianceG() {
+	try {
+	    // 0 pour le schéma identique au précédent
+	    List<A> lA = new LinkedList<>();
+	    lA.add(new A());
+	    List<B> lB = Exo1.<B> contravarianceG(lA); 
+	    // rien pour l'intanciation car
+	    // bizarrement non nécessaire
+	    lB.get(0).f();
+	} catch (Exception e) {
+	    e.printStackTrace(System.out);
+	}
+    }
+
+}
