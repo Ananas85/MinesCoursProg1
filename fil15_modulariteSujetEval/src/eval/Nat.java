@@ -1,9 +1,12 @@
 package eval;
 
+import structuresAlgebriques.MonoideAdd;
+import structuresAlgebriques.MonoideMul;
+
 /*
  * Question 2.1 : l'interface Nat
  */
-interface Nat {
+interface Nat extends MonoideAdd<Nat>, MonoideMul<Nat>, FabriqueNats<Nat>{
 	boolean estZero(); // Teste à zéro l'entier naturel
 
 	Nat predecesseur(); // Donne le prédécesseur s'il existe

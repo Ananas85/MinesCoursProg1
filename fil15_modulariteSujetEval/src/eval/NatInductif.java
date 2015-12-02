@@ -14,12 +14,12 @@ public interface NatInductif extends Nat {
     }
 
     @Override
-    Nat zero(){
+    default Nat zero(){
         return this.creer();
     }
 
     @Override
-    Nat un(){
+    default Nat un(){
         return this.creer( zero() );
     }
 }
