@@ -44,7 +44,7 @@ public class Succ implements NatInductif {
             return false;
 
         Nat x = (Nat)o;
-        
+
         if (x.estZero())
         {
             return false;
